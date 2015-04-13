@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58148098-8977-4C5E-8FA5-A5E3DD4B723E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Artem.Data.Access</RootNamespace>
+    <AssemblyName>Artem.Data.Access</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Fast Build %28Same as DEBUG without building projects%29|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Fast Build %28Same as DEBUG without building projects%29\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\ConsultCommerce.Data.Access.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Utilities" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Build\DalBuildProvider.cs" />
+    <Compile Include="Build\DalExtractor.cs" />
+    <Compile Include="Build\DalGenerator.cs" />
+    <Compile Include="Build\DalGenTask.cs" />
+    <Compile Include="Build\DalUtil.cs" />
+    <Compile Include="Build\MethodBuilder.cs" />
+    <Compile Include="Build\_Defs.cs" />
+    <Compile Include="Build\MapDescriptor.cs" />
+    <Compile Include="Build\MapTableDescriptor.cs" />
+    <Compile Include="Build\PersistenceBuildProvider.cs" />
+    <Compile Include="Build\PersistenceHelper.cs" />
+    <Compile Include="Config\DataAccessSection.cs" />
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="DataAccess.Methods.cs" />
+    <Compile Include="DataAccess.Object.cs" />
+    <Compile Include="DataAccess.Static.cs" />
+    <Compile Include="DataAccessContext.cs" />
+    <Compile Include="DataAccessException.cs" />
+    <Compile Include="DataAccessView.cs" />
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="DataProviderCollection.cs" />
+    <Compile Include="DataScope.cs" />
+    <Compile Include="DbCommandAttribute.cs" />
+    <Compile Include="DbDataConvert.cs" />
+    <Compile Include="DbDataUtil.cs" />
+    <Compile Include="DbFieldAttribute.cs" />
+    <Compile Include="Defs.cs" />
+    <Compile Include="ObjectHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyComparer.cs" />
+    <Compile Include="Providers\DataProviderBase.cs" />
+    <Compile Include="Providers\FbDataProvider.cs" />
+    <Compile Include="Providers\MsOracleDataProvider.cs" />
+    <Compile Include="Providers\MySqlDataProvider.cs" />
+    <Compile Include="Providers\OdbcDataProvider.cs" />
+    <Compile Include="Providers\OleDbDataProvider.cs" />
+    <Compile Include="Providers\OracleDataProvider.cs" />
+    <Compile Include="Providers\SqlDataProvider.cs" />
+    <Compile Include="ProvidersHelper.cs" />
+    <Compile Include="SR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SR.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Build\Artem.Data.Access.targets" />
+    <None Include="Build\sample.dal" />
+    <None Include="Build\sample.per" />
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Diagrams\" />
+    <Folder Include="Sql\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
