@@ -1,4 +1,5 @@
 # .NET Data Access
+[![Build status](https://ci.appveyor.com/api/projects/status/eb2nx7g5i0ns4f60?svg=true)](https://ci.appveyor.com/project/velio_ivanov/dotnet-data-access)
 
 .NET ORM implementation with build in object fetching with properties and methods mapping, including BuildProvider for building strong type from a given database schema.
 This is porting of an old project of mine - ORM implementation for .NET Framework 2. Looking back to it, I think, that's worth to give it a second live and issue a modern version.
