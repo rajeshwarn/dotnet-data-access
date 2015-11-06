@@ -1,0 +1,31 @@
+﻿<mappings namespace="Test.Data">
+	<mapping connectionString="SERVER=.;DATABASE=northwind;Integrated Security=SSPI;"
+		  tableName="Employees"
+		  className="Employee"
+		  selectCommand="SELECT firstname AS FirstName, lastname AS LastName, title As Title FROM employees"
+		  allowPartialClass="false"
+		  allowCollectionClass="false"
+		  collectionClassName="EmployeeCollection" 
+		  allowGatewayClass="false"
+		  gatewayClassName="Customers">
+		<method name="TestMethod" 
+			static="false" 
+			accessor="public"
+			type="" 
+			sqlCommand="" 
+			sqlCommandType="" 
+			sqlParams="" 
+			sqlFile="">
+		</method>
+	</mapping>
+	<mapping connectionString="SERVER=.;DATABASE=northwind;Integrated Security=SSPI;"
+		  tableName="Customers"
+		  className="Customer"
+		  selectCommand="SELECT companyname AS CompanyName, contactname AS Contact, country As Country FROM customers"
+		  allowPartialClass="true"
+		  allowCollectionClass="true"
+		  collectionClassName="CustomerCollection" 
+		  allowGatewayClass="true"
+		  gatewayClassName="Customers">
+	</mapping>
+</mappings>

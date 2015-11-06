@@ -1,0 +1,25 @@
+﻿<!--
+***********************************************************************************************
+Artem.Data.Access.targets
+
+This file defines the steps in the standard build process specific for Artem.Data.Access projects.
+
+Copyright (C) 2006. Velio Ivanov. All rights reserved.
+***********************************************************************************************
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <UsingTask TaskName="Artem.Data.Access.Build.DalGenTask" AssemblyFile="$(MSBuildProjectDirectory)\Libs\Artem.Data.Access.dll" />
+    <Target Name="DalMapping">
+        <DalGenTask Language="CS" FileName="%(Content.FullPath)" OutputDirectory="$(MSBuildProjectDirectory)\Dal\">
+            <Output TaskParameter="OutputDirectory" ItemName="DalMapping" />
+        </DalGenTask>
+    </Target>
+    <PropertyGroup>
+        <CoreBuildDependsOn>
+            $(CoreBuildDependsOn);
+            DalMapping
+        </CoreBuildDependsOn>
+    </PropertyGroup>
+
+</Project>
